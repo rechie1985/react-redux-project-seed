@@ -1,3 +1,5 @@
+import styles from './List.scss';
+
 import { Component, PropTypes } from 'react';
 
 export default class List extends Component {
@@ -20,8 +22,9 @@ export default class List extends Component {
   }
 
   render() {
+    console.log('styles', styles)
     return (
-      <ul>
+      <ul className={styles.list_wrap}>
         {this._renderRow()}
       </ul>
     )

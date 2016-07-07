@@ -20,6 +20,7 @@ var mockServer = require('gulp-mock-server');
 
 // The development server (the recommended option for development)
 
+var assetsDir = '/github/react-redux-project-seed/dist/';
 
 gulp.task("dev", ["mock", "webpack-dev-server"], function() {
 });
@@ -68,12 +69,12 @@ gulp.task('usemin',['webpack:build-prod'], function() {
 });
 
 gulp.task('move', ['usemin'], function() {
-  return gulp.src('dist/qaCommunity/**/*')
+  return gulp.src(`dist${assetsDir}/**/*`)
     .pipe(gulp.dest('dist/'));
 });
 
 gulp.task('prod-clean', ['move'], function() {
-  return del(['dist/qaCommunity', 'dist/js/main.js*', 'dist/css/main.css*']);
+  return del([`dist${assetsDir}`, 'dist/js/index.js*', 'dist/css/index.css*']);
 });
 
 

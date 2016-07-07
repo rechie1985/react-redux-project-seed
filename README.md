@@ -70,7 +70,7 @@ gulp prod
 
 --------
 
-#### 6.项目目录说明
+#### 5.项目目录说明
 
 > gulpfile.js --- gulp相关配置
 > webpack.dev.config.js/webpack.prod.config.js --- webpack 开发/上线 配置
@@ -95,7 +95,7 @@ gulp prod
 --------
 
 
-#### 7.注意事项
+#### 6.注意事项
 - 顶层state是原生Js对象，第二级对应的value都是Immutable Data。在使用中要注意。
 ```
 const { userInfo } = state;
@@ -116,7 +116,7 @@ if (Immutable.Iterable.isIterable(state)) {
 
 
 
-#### 8.TODO
+#### 7.TODO
 - [ ] 是否使用css-modules
 - [ ] 将gulp功能逐渐转移到webpack上
 - [ ] 命令行工具，进行一些目录修改的操作

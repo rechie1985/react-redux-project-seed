@@ -29,7 +29,7 @@ var config = {
             }
         }, {
             test: /\.scss$/,
-            loader: ExtractTextPlugin.extract("style-loader", "css-loader!sass-loader")
+            loader: ExtractTextPlugin.extract("style-loader", "css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!sass-loader")
         }, ],
         noParse: [],    },
     // devtool: "source-map",
@@ -50,7 +50,8 @@ var config = {
     plugins: [
       new webpack.DefinePlugin({
         'process.env': {
-          'NODE_ENV': '"production"'
+          'NODE_ENV': '"production"',
+          'PATH_PREFIX': '"/github/react-redux-project-seed/dist/"'
         }
       }),
       new webpack.optimize.UglifyJsPlugin({
