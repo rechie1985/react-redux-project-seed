@@ -16,10 +16,23 @@ import { PATH_PREFIX } from '../utils/GlobalUtil';
 
 import Immutable from 'immutable';
 
+// 将state中第二级Immutable Data转换成js对象
+function stateTransformer(state) {
+  console.log('stateTransformer');
+  let newState = {};
+  for (var i of Object.keys(state)) {
+    if (Immutable.Iterable.isIterable(state[i])) {
+      newState[i] = state[i].toJS();
+    } else {
+      newState[i] = state[i];
+    }
+  };
+  return newState;
+}
 
 const middleware = process.env.NODE_ENV === 'production' ?
   [ thunk ] :
-  [ thunk, logger() ]
+  [ thunk, logger({stateTransformer}) ]
 
 const initialState = Immutable.Map();
 const createStoreWithMiddleware = applyMiddleware(...middleware)(createStore)
