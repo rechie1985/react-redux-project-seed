@@ -76,6 +76,8 @@ gulp prod
     │
     ├── webpack.dev.config.js/webpack.prod.config.js   webpack 开发/上线 配置
     │
+    ├── mockApi   接口数据模拟
+    │
     ├── src   源码
     │   │
     │   ├── actions ActionCreater
