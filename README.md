@@ -40,7 +40,7 @@ gulp prod
 - [x] [immutable](https://facebook.github.io/immutable-js/docs/#/Map/mergeIn)
 - [x] sass
 - [ ] Promise
-- [ ] [css-modules](https://github.com/css-modules/webpack-demo)
+- [x] [css-modules](https://github.com/css-modules/webpack-demo)
 - [x] gulp
 - [x] webpack
 
@@ -80,26 +80,26 @@ gulp prod
     │   │
     │   ├── actions ActionCreater
     │   │
-    │   └── components 组件目录。所有组件都需要新建一个目录，如List组件
-    │       │
-    │       └── List
-    │           │
-    │           ├── List.js
-    │           │
-    │           └── List.sass
-    │ 
-    ├── constants 常量目录
-    │
-    ├── containers 视图组件，对应每一个不同视图
-    │
-    ├── entrys 入口文件，暂时只有一个index.js，进行createStore、路由配置等操作
-    │
-    ├── reducers  reducer目录，根据视图和数据两个维度进行切分。
-    │
-    ├── utils  常用功能集合
-    │
-    ├── libs 第三方库(支持npm的库，不需要放在这里)
-    │
+    │   ├── components 组件目录。所有组件都需要新建一个目录，如List组件
+    │   │   │
+    │   │   └── List
+    │   │       │
+    │   │       ├── List.js
+    │   │       │
+    │   │       └── List.sass
+    │   │
+    │   ├── constants 常量目录
+    │   │
+    │   ├── containers 视图组件，对应每一个不同视图
+    │   │
+    │   ├── entrys 入口文件，暂时只有一个index.js，进行createStore、路由配置等操作
+    │   │
+    │   ├── reducers  reducer目录，根据视图和数据两个维度进行切分。
+    │   │
+    │   ├── utils  常用功能集合
+    │   │
+    │   └── libs 第三方库(支持npm的库，不需要放在这里)
+    │   
     └── tools  辅助工具集,node实现。     
         │
         └── restfulProxyMiddleware 使mock server支持restful接口的中间件
@@ -133,8 +133,9 @@ if (Immutable.Iterable.isIterable(state)) {
 
 
 #### 7.TODO
-- [ ] 是否使用css-modules
+- [x] 使用css-modules
 - [ ] 将gulp功能逐渐转移到webpack上
 - [ ] 命令行工具，进行一些目录修改的操作
 - [ ] 补全整体项目流程及相关知识点
 - [ ] 增加单元测试框架
+- [ ] 目录结构修改，提取出routes目录，对应视图组件
